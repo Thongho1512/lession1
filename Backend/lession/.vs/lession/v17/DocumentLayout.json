@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\C#\\source_code\\lession1\\Backend\\lession\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\donhang\\donhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\donhang\\donhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\donhang\\updatedonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\donhang\\updatedonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\chitietdonhang\\updatechitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\chitietdonhang\\updatechitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\donhang\\createdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\donhang\\createdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\chitietdonhang\\updatechitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\chitietdonhang\\updatechitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\donhang\\donhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\donhang\\donhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\donhang\\updatedonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\dtos\\donhang\\updatedonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\dtos\\chitietdonhang\\createchitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +46,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "src\\lession.Application\\Mappings\\MappingProfile.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Mappings\\MappingProfile.cs*",
+              "RelativeToolTip": "src\\lession.Application\\Mappings\\MappingProfile.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T10:49:01.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "CreateDonHangDto.cs",
               "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\CreateDonHangDto.cs",
               "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\DonHang\\CreateDonHangDto.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\CreateDonHangDto.cs*",
-              "RelativeToolTip": "src\\lession.Application\\DTOs\\DonHang\\CreateDonHangDto.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAgwAMAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\CreateDonHangDto.cs",
+              "RelativeToolTip": "src\\lession.Application\\DTOs\\DonHang\\CreateDonHangDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T10:46:15.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "UpdateChiTietDonHangDto.cs",
               "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\ChiTietDonHang\\UpdateChiTietDonHangDto.cs",
               "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\ChiTietDonHang\\UpdateChiTietDonHangDto.cs",
@@ -68,7 +85,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "DonHangDto.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs",
+              "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs",
+              "RelativeToolTip": "src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T10:42:19.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CreateChiTietDonHangDto.cs",
               "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\ChiTietDonHang\\CreateChiTietDonHangDto.cs",
               "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\ChiTietDonHang\\CreateChiTietDonHangDto.cs",
@@ -81,12 +111,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UpdateDonHangDto.cs",
               "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\UpdateDonHangDto.cs",
               "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\DonHang\\UpdateDonHangDto.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\UpdateDonHangDto.cs*",
-              "RelativeToolTip": "src\\lession.Application\\DTOs\\DonHang\\UpdateDonHangDto.cs*",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\UpdateDonHangDto.cs",
+              "RelativeToolTip": "src\\lession.Application\\DTOs\\DonHang\\UpdateDonHangDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T10:45:39.78Z",
@@ -94,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ChiTietDonHangDto.cs",
               "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\ChiTietDonHang\\ChiTietDonHangDto.cs",
               "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\ChiTietDonHang\\ChiTietDonHangDto.cs",
@@ -103,19 +133,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T10:42:35.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonHangDto.cs",
-              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs",
-              "RelativeDocumentMoniker": "src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs*",
-              "RelativeToolTip": "src\\lession.Application\\DTOs\\DonHang\\DonHangDto.cs*",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA3wA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T10:42:19.079Z",
               "EditorCaption": ""
             }
           ]
