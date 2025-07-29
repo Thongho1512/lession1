@@ -11,7 +11,7 @@ public partial class DonHang
 
     public int KhachHangId { get; set; }
 
-    public DateTime? NgayDat { get; set; }
+    public DateOnly? NgayDat { get; set; }
 
     public decimal TongTien { get; set; }
 
