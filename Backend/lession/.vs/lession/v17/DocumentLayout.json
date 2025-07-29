@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "D:\\C#\\source_code\\lession1\\Backend\\lession\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\implementation\\khachhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\implementation\\khachhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\implementation\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\implementation\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\implementation\\donhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\implementation\\donhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\interfaces\\idonhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\interfaces\\idonhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\implementation\\chitietdonhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\implementation\\chitietdonhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\implementation\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\implementation\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\implementation\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\implementation\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\interfaces\\ichitietdonhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\interfaces\\ichitietdonhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\interfaces\\isanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\interfaces\\isanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\repositories\\interfaces\\ikhachhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\repositories\\interfaces\\ikhachhangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\data\\entities\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\data\\entities\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,20 +74,176 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonHang.cs",
-              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "RelativeToolTip": "src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DonHangRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\DonHangRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Implementation\\DonHangRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\DonHangRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Implementation\\DonHangRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T07:10:25.676Z",
+              "WhenOpened": "2025-07-29T09:36:01.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Implementation\\UnitOfWork.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\UnitOfWork.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Implementation\\UnitOfWork.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAUwB0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:34:26.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChiTietDonHangRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\ChiTietDonHangRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Implementation\\ChiTietDonHangRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\ChiTietDonHangRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Implementation\\ChiTietDonHangRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:33:08.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SanPhamRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\SanPhamRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Implementation\\SanPhamRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\SanPhamRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Implementation\\SanPhamRepository.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:28:42.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "KhachHangRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\KhachHangRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Implementation\\KhachHangRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\KhachHangRepository.cs*",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Implementation\\KhachHangRepository.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwB8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:25:43.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Implementation\\GenericRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Implementation\\GenericRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Implementation\\GenericRepository.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAwwAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:57:27.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:52:26.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDonHangRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IDonHangRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IDonHangRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IDonHangRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IDonHangRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:45:39.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IChiTietDonHangRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IChiTietDonHangRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IChiTietDonHangRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IChiTietDonHangRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IChiTietDonHangRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:50:39.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:34:41.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ISanPhamRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:43:49.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IKhachHangRepository.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IKhachHangRepository.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IKhachHangRepository.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Repositories\\Interfaces\\IKhachHangRepository.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Repositories\\Interfaces\\IKhachHangRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T08:40:28.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
+              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
+              "RelativeToolTip": "src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T07:36:02.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Data\\ApplicationDbContext.cs",
@@ -47,7 +251,8 @@
               "RelativeToolTip": "src\\lession.Infrastructure\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T07:10:20.776Z"
+              "WhenOpened": "2025-07-29T07:10:20.776Z",
+              "EditorCaption": ""
             }
           ]
         }
