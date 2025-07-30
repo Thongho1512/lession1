@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\C#\\source_code\\lession1\\Backend\\lession\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\service\\implementation\\donhangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\service\\implementation\\donhangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A009AB54-E96D-4D70-A126-59DB1B206379}|src\\lession.API\\lession.API.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.api\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A009AB54-E96D-4D70-A126-59DB1B206379}|src\\lession.API\\lession.API.csproj|solutionrelative:src\\lession.api\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.infrastructure\\data\\entities\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EABA1F71-6B3A-4C72-9FC3-C902240212CA}|src\\lession.Infrastructure\\lession.Infrastructure.csproj|solutionrelative:src\\lession.infrastructure\\data\\entities\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A009AB54-E96D-4D70-A126-59DB1B206379}|src\\lession.API\\lession.API.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.api\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A009AB54-E96D-4D70-A126-59DB1B206379}|src\\lession.API\\lession.API.csproj|solutionrelative:src\\lession.api\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\service\\interfaces\\idonhangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\service\\interfaces\\idonhangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FACFABA6-66EE-47ED-ABF5-10C4DBE7C8E5}|src\\lession.Application\\lession.Application.csproj|solutionrelative:src\\lession.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A009AB54-E96D-4D70-A126-59DB1B206379}|src\\lession.API\\lession.API.csproj|d:\\c#\\source_code\\lession1\\backend\\lession\\src\\lession.api\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A009AB54-E96D-4D70-A126-59DB1B206379}|src\\lession.API\\lession.API.csproj|solutionrelative:src\\lession.api\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DonHang.cs",
-              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "RelativeDocumentMoniker": "src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "RelativeToolTip": "src\\lession.Infrastructure\\Data\\Entities\\DonHang.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwA0AAAAEAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DonHangController.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.API\\Controllers\\DonHangController.cs",
+              "RelativeDocumentMoniker": "src\\lession.API\\Controllers\\DonHangController.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.API\\Controllers\\DonHangController.cs*",
+              "RelativeToolTip": "src\\lession.API\\Controllers\\DonHangController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T02:48:15.145Z",
+              "WhenOpened": "2025-07-30T04:07:09.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SanPhamController.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.API\\Controllers\\SanPhamController.cs",
+              "RelativeDocumentMoniker": "src\\lession.API\\Controllers\\SanPhamController.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.API\\Controllers\\SanPhamController.cs*",
+              "RelativeToolTip": "src\\lession.API\\Controllers\\SanPhamController.cs*",
+              "ViewState": "AgIAADAAAAAAAAAAAAAswDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T04:03:32.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IDonHangService.cs",
-              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Service\\Interfaces\\IDonHangService.cs",
-              "RelativeDocumentMoniker": "src\\lession.Application\\Service\\Interfaces\\IDonHangService.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Service\\Interfaces\\IDonHangService.cs",
-              "RelativeToolTip": "src\\lession.Application\\Service\\Interfaces\\IDonHangService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA0AAABWAAAAAAAAAA==",
+              "Title": "KhachHangController.cs",
+              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.API\\Controllers\\KhachHangController.cs",
+              "RelativeDocumentMoniker": "src\\lession.API\\Controllers\\KhachHangController.cs",
+              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.API\\Controllers\\KhachHangController.cs*",
+              "RelativeToolTip": "src\\lession.API\\Controllers\\KhachHangController.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwDoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T01:37:48.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Mappings\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "src\\lession.Application\\Mappings\\MappingProfile.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Mappings\\MappingProfile.cs",
-              "RelativeToolTip": "src\\lession.Application\\Mappings\\MappingProfile.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAmwBMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T00:10:51.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonHangService.cs",
-              "DocumentMoniker": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Service\\Implementation\\DonHangService.cs",
-              "RelativeDocumentMoniker": "src\\lession.Application\\Service\\Implementation\\DonHangService.cs",
-              "ToolTip": "D:\\C#\\source_code\\lession1\\Backend\\lession\\src\\lession.Application\\Service\\Implementation\\DonHangService.cs*",
-              "RelativeToolTip": "src\\lession.Application\\Service\\Implementation\\DonHangService.cs*",
-              "ViewState": "AgIAABEAAAAAAAAAAAD4vx8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T00:08:17.186Z",
+              "WhenOpened": "2025-07-30T03:37:53.877Z",
               "EditorCaption": ""
             }
           ]
