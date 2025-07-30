@@ -25,13 +25,13 @@ public partial class ApplicationDbContext : DbContext
     public virtual DbSet<SanPham> SanPhams { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=DefaultConnection");
+        => optionsBuilder.UseSqlServer("name=DefaultConnection");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ChiTietDonHang>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ChiTietD__3214EC074F92E225");
+            entity.HasKey(e => e.Id).HasName("PK__ChiTietD__3214EC0732573383");
 
             entity.ToTable("ChiTietDonHang");
 
@@ -39,7 +39,6 @@ public partial class ApplicationDbContext : DbContext
 
             entity.HasOne(d => d.DonHang).WithMany(p => p.ChiTietDonHangs)
                 .HasForeignKey(d => d.DonHangId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ChiTietDonHang_DonHang");
 
             entity.HasOne(d => d.SanPham).WithMany(p => p.ChiTietDonHangs)
@@ -50,11 +49,11 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<DonHang>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__DonHang__3214EC07A821F8F2");
+            entity.HasKey(e => e.Id).HasName("PK__DonHang__3214EC07BB927BB2");
 
             entity.ToTable("DonHang");
 
-            entity.HasIndex(e => e.MaDonHang, "UQ__DonHang__129584AC4CB2890B").IsUnique();
+            entity.HasIndex(e => e.MaDonHang, "UQ__DonHang__129584ACDAC25168").IsUnique();
 
             entity.Property(e => e.GhiChu).HasMaxLength(500);
             entity.Property(e => e.MaDonHang).HasMaxLength(50);
@@ -69,11 +68,11 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<KhachHang>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__KhachHan__3214EC071C963BB0");
+            entity.HasKey(e => e.Id).HasName("PK__KhachHan__3214EC07B9F1D9F6");
 
             entity.ToTable("KhachHang");
 
-            entity.HasIndex(e => e.Email, "UQ__KhachHan__A9D10534E0897F9A").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__KhachHan__A9D105341372D7C1").IsUnique();
 
             entity.Property(e => e.Active).HasDefaultValue(true);
             entity.Property(e => e.DiaChi).HasMaxLength(200);
@@ -88,11 +87,11 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<SanPham>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__SanPham__3214EC0715B3605E");
+            entity.HasKey(e => e.Id).HasName("PK__SanPham__3214EC07BFFDDD29");
 
             entity.ToTable("SanPham");
 
-            entity.HasIndex(e => e.MaSanPham, "UQ__SanPham__FAC7442C0119CCCB").IsUnique();
+            entity.HasIndex(e => e.MaSanPham, "UQ__SanPham__FAC7442C3909FA17").IsUnique();
 
             entity.Property(e => e.Active).HasDefaultValue(true);
             entity.Property(e => e.DonViTinh).HasMaxLength(50);

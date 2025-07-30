@@ -1,0 +1,20 @@
+﻿using Azure;
+using lession.API.DTOs.Common;
+using lession.API.DTOs.SanPham;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lession.Application.Service.Interfaces
+{
+    public interface ISanPhamService
+    {
+        Task<ResponseDto<SanPhamDto>> GetByIdAsync(int id);
+        Task<ResponseDto<IEnumerable<SanPhamDto>>> GetAllAsync();
+        Task<ResponseDto<SanPhamDto>> CreateAsync(CreateSanPhamDto createDto);
+        Task<ResponseDto<SanPhamDto>> UpdateAsync(int id, UpdateSanPhamDto updateDto);
+        Task<ResponseDto<bool>> DeleteAsync(int id);
+    }
+}
