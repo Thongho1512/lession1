@@ -1,11 +1,6 @@
-﻿using Azure;
-using lession.API.DTOs.Common;
+﻿using lession.API.DTOs.Common;
 using lession.API.DTOs.SanPham;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace lession.Application.Service.Interfaces
 {

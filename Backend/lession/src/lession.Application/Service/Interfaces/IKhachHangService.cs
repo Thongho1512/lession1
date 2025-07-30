@@ -12,5 +12,7 @@ namespace lession.Application.Service.Interfaces
         Task<ResponseDto<KhachHangDto>> CreateAsync(CreateKhachHangDto createDto);
         Task<ResponseDto<KhachHangDto>> UpdateAsync(int id, UpdateKhachHangDto updateDto);
         Task<ResponseDto<bool>> DeleteAsync(int id);
+
+        Task<ResponseDto<KhachHangDto>> GetKhachHangIsDeleted(int id);
     }
 }

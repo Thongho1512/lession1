@@ -51,6 +51,17 @@ namespace lession.API.Controllers
             return result.Success ? Ok(result) : NotFound(result);
         }
 
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Patch(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var result = await _khachHangService.GetKhachHangIsDeleted(id);
+            return result.Success ? Ok(result) : NotFound(result);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

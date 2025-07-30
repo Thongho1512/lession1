@@ -71,6 +71,25 @@ namespace lession.Application.Service.Implementation
             return null; // Chưa implement
         }
 
+        public async Task<ResponseDto<KhachHangDto>> GetKhachHangIsDeleted(int id)
+        {
+            var khachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
+            if (khachHang == null)
+            {
+                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng đã xóa!");
+            }
+            if (khachHang.Active == true)
+            {
+                return ResponseDto<KhachHangDto>.ErrorResponse("Khách hàng này chưa bị xóa!");
+            }
+            khachHang.Active = true; // Đánh dấu là không hoạt động
+            await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
+            await _unitOfWork.SaveChangesAsync();
+
+            var dto = _mapper.Map<KhachHangDto>(khachHang);
+            return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Khôi phục khách hàng thành công.");
+        }
+
         public async Task<ResponseDto<IEnumerable<KhachHangDto>>> SearchByNameAsync(string searchTerm)
         {
             IEnumerable<KhachHang> khachHangs = await _unitOfWork.KhachHangRepository.SearchByNameAsync(searchTerm);

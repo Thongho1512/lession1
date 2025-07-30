@@ -6,6 +6,7 @@
         public string TenSanPham { get; set; } = string.Empty;
         public string MoTa { get; set; } = string.Empty;
         public decimal GiaBan { get; set; }
+        public bool? Active { get; set; }
         public int SoLuongTon { get; set; }
         public string DonViTinh { get; set; } = string.Empty;
         // Ngày cập nhật sẽ

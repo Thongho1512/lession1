@@ -44,9 +44,6 @@ builder.Services.AddScoped<ISanPhamService, SanPhamService>();
 builder.Services.AddScoped<IKhachHangService, KhachHangService>();
 builder.Services.AddScoped<IDonHangService, DonHangService>();
 
-// Add Global Exception Middleware
-builder.Services.AddScoped<GlobalExceptionMiddleware>();
-
 // Configure Swagger/OpenAPI
 // This is used to generate API documentation and provide a UI for testing the API endpoints.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -79,7 +76,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Store Management API V1");
-        c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
+        //c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 }
 

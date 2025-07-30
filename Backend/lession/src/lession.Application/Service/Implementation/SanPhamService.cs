@@ -4,18 +4,18 @@ using lession.API.DTOs.Common;
 using lession.API.DTOs.SanPham;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
-using lession.Infrastructure.Repositories.Implementation;
+using lession.Infrastructure.Repositories.Interfaces;
 
 
 namespace lession.Application.Service.Implementation
 {
     public class SanPhamService : ISanPhamService
     {
-        private readonly UnitOfWork _unitOfWork;
-        private readonly Mapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
         // constructor
-        public SanPhamService(UnitOfWork unitOfWork, Mapper mapper)
+        public SanPhamService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
