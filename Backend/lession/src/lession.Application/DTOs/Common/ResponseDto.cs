@@ -7,7 +7,7 @@
         public T? Data { get; set; }
         public List<string> Errors { get; set; } = new List<string>();
 
-        public static ResponseDto<T> SuccessResponse(T data, string message = "Operation successful")
+        public static ResponseDto<T> SuccessResponse(T data, string message = "Thành công.")
         {
             return new ResponseDto<T>
             {

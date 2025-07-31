@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
 using lession.API.DTOs.Common;
 using lession.API.DTOs.DonHang;
+using lession.Application.DTOs.Common;
+using lession.Application.Extensions;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
 using lession.Infrastructure.Repositories.Implementation;
 using lession.Infrastructure.Repositories.Interfaces;
+using System.Linq.Expressions;
 
 
 namespace lession.Application.Service.Implementation
@@ -13,6 +16,13 @@ namespace lession.Application.Service.Implementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+
+        // Define ordering mappings
+        private readonly Dictionary<string, Expression<Func<DonHang, object>>> _orderMappings = new()
+        {
+            { "madonhang", x => x.MaDonHang },
+            { "ngaydat", x => x.NgayDat },
+        };
 
         public DonHangService(IUnitOfWork unitOfWork, IMapper mapper)
         {
@@ -28,12 +38,12 @@ namespace lession.Application.Service.Implementation
                 // Check if MaDonHang already exists
                 var exists = await _unitOfWork.DonHangRepository.ExistsAsync(d => d.MaDonHang == createDto.MaDonHang);
                 if (exists)
-                    return ResponseDto<DonHangDto>.ErrorResponse("Mã đơn hàng đã tồn tại");
+                    return ResponseDto<DonHangDto>.ErrorResponse("Mã đơn hàng đã tồn tại.");
 
                 // Check if customer exists
                 var khachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(createDto.KhachHangId);
                 if (khachHang == null)
-                    return ResponseDto<DonHangDto>.ErrorResponse("Không tìm thấy khách hàng");
+                    return ResponseDto<DonHangDto>.ErrorResponse("Không tìm thấy khách hàng.");
 
                 var donHang = _mapper.Map<DonHang>(createDto);
                 donHang.TongTien = 0;
@@ -49,13 +59,13 @@ namespace lession.Application.Service.Implementation
                     if (sanPham == null)
                     {
                         await _unitOfWork.RollbackTransactionAsync();
-                        return ResponseDto<DonHangDto>.ErrorResponse($"Không tìm thấy sản phẩm với ID: {ctDto.SanPhamId}");
+                        return ResponseDto<DonHangDto>.ErrorResponse($"Không tìm thấy sản phẩm với ID: {ctDto.SanPhamId}.");
                     }
 
                     if (sanPham.SoLuongTon < ctDto.SoLuong)
                     {
                         await _unitOfWork.RollbackTransactionAsync();
-                        return ResponseDto<DonHangDto>.ErrorResponse($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn");
+                        return ResponseDto<DonHangDto>.ErrorResponse($"Sản phẩm {sanPham.TenSanPham} không đủ số lượng tồn.");
                     }
 
                     var chiTiet = new ChiTietDonHang
@@ -83,7 +93,7 @@ namespace lession.Application.Service.Implementation
 
                 var result = await _unitOfWork.DonHangRepository.GetWithDetailsAsync(donHang.Id);
                 var dto = _mapper.Map<DonHangDto>(result);
-                return ResponseDto<DonHangDto>.SuccessResponse(dto, "Tạo đơn hàng thành công");
+                return ResponseDto<DonHangDto>.SuccessResponse(dto, "Tạo đơn hàng thành công.");
             }
             catch (Exception)
             {
@@ -113,13 +123,13 @@ namespace lession.Application.Service.Implementation
                     var sanPham = await _unitOfWork.SanPhamRepository.GetByIdAsync(ctDto.SanPhamId);
                     if(sanPham == null)
                     {
-                        return ResponseDto<DonHangDto>.ErrorResponse($"Không tìm thấy sản phẩm với ID: {ctDto.SanPhamId}");
+                        return ResponseDto<DonHangDto>.ErrorResponse($"Không tìm thấy sản phẩm với ID: {ctDto.SanPhamId}.");
                     }
 
                     var chiTietDonHang = await _unitOfWork.ChiTietDonHangRepository.GetByIdAsync(ctDto.Id);
                     if(chiTietDonHang == null)
                     {
-                        return ResponseDto<DonHangDto>.ErrorResponse($"Không tìm thấy chi tiết đơn hàng với ID: {ctDto.Id}");
+                        return ResponseDto<DonHangDto>.ErrorResponse($"Không tìm thấy chi tiết đơn hàng với ID: {ctDto.Id}.");
                     }
                     sanPham.SoLuongTon = sanPham.SoLuongTon + (chiTietDonHang.SoLuong - ctDto.SoLuong);
                     await _unitOfWork.SanPhamRepository.UpdateAsync(sanPham);
@@ -190,7 +200,43 @@ namespace lession.Application.Service.Implementation
             throw new NotImplementedException();
         }
 
-        
+        // For pagination 
+        public async Task<ResponseDto<PagedResult<DonHangDto>>> GetPagedAsync(QueryParameters queryParameters)
+        {
+            // Start with base query including KhachHang
+            var query = _unitOfWork.DonHangRepository.GetDonHangsWithKhachHangQuery();
+
+            // Apply search if provided
+            if (!string.IsNullOrWhiteSpace(queryParameters.SearchTerm))
+            {
+                query = query.Where(d =>
+                    d.MaDonHang.Contains(queryParameters.SearchTerm) ||
+                    d.KhachHang.TenKhachHang.Contains(queryParameters.SearchTerm) ||
+                    (d.GhiChu != null && d.GhiChu.Contains(queryParameters.SearchTerm))
+                );
+            }
+
+            // Apply ordering
+            query = query.ApplyOrdering(
+                queryParameters.OrderBy,
+                queryParameters.IsDescending,
+                _orderMappings);
+
+            // Apply pagination
+            var pagedResult = await query.ToPagedResultAsync(
+                queryParameters.PageNumber,
+                queryParameters.PageSize);
+
+            // Map to DTOs
+            var dtos = _mapper.Map<List<DonHangDto>>(pagedResult.Items);
+            var result = new PagedResult<DonHangDto>(
+                dtos,
+                pagedResult.TotalCount,
+                pagedResult.PageNumber,
+                pagedResult.PageSize);
+
+            return ResponseDto<PagedResult<DonHangDto>>.SuccessResponse(result, "Lấy danh sách đơn hàng thành công.");
+        }
     }
 }
 

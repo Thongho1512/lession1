@@ -11,5 +11,10 @@ namespace lession.Infrastructure.Repositories.Interfaces
     {
         Task<KhachHang?> GetByMaKhachHang(string maKhachHang);
         Task<IEnumerable<KhachHang>> SearchByNameAsync(string tenKhachHang);
+
+        // For pagination
+        IQueryable<KhachHang> GetActiveKhachHangsQuery(bool? active = null);
+        IQueryable<KhachHang> SearchKhachHangsQuery(string searchTerm);
+
     }
 }

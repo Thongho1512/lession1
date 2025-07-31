@@ -13,5 +13,9 @@ namespace lession.Infrastructure.Repositories.Interfaces
         Task<IEnumerable<DonHang>> GetByKhachHangIdAsync(int khachHangId);
         Task<DonHang?> GetWithDetailsAsync(int id);
         //Task<IEnumerable<DonHang>> GetByDataRangeAsync(DateOnly startDate, DateOnly endDate);
+
+        // For pagination
+        IQueryable<DonHang> GetDonHangsWithKhachHangQuery();
+        IQueryable<DonHang> SearchDonHangsQuery(string searchTerm);
     }
 }

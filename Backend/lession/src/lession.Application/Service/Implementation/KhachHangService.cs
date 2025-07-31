@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 using lession.API.DTOs.Common;
 using lession.API.DTOs.KhachHang;
+using lession.Application.DTOs.Common;
+using lession.Application.Extensions;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
 using lession.Infrastructure.Repositories.Interfaces;
+using System.Linq.Expressions;
+using static lession.Application.DTOs.Common.QueryParameters;
 
 
 namespace lession.Application.Service.Implementation
@@ -13,6 +17,14 @@ namespace lession.Application.Service.Implementation
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
+        // Define ordering mappings
+        private readonly Dictionary<string, Expression<Func<KhachHang, object>>> _orderMappings = new()
+        {
+            { "makhachhang", x => x.MaKhachHang },
+            { "tenkhachhang", x => x.TenKhachHang },
+            { "email", x => x.Email ?? "" },
+            { "ngaytao", x => x.NgayTao }
+        };
         public KhachHangService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
@@ -24,14 +36,14 @@ namespace lession.Application.Service.Implementation
             var exists = await _unitOfWork.KhachHangRepository.ExistsAsync(k => k.MaKhachHang == createDto.MaKhachHang);
             if (exists)
             {
-                return ResponseDto<KhachHangDto>.ErrorResponse("Mã khách hàng đã tồn tại!");
+                return ResponseDto<KhachHangDto>.ErrorResponse("Mã khách hàng đã tồn tại.");
             }
             var khachHang = _mapper.Map<KhachHang>(createDto);
             await _unitOfWork.KhachHangRepository.AddAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
 
             var dto = _mapper.Map<KhachHangDto>(khachHang);
-            return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Tạo khách hàng thành công!");
+            return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Tạo khách hàng thành công.");
         }
 
         public async Task<ResponseDto<bool>> DeleteAsync(int id)
@@ -39,12 +51,12 @@ namespace lession.Application.Service.Implementation
             var khachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
             if (khachHang == null)
             {
-                return ResponseDto<bool>.ErrorResponse("Không tìm thấy khách hàng!");
+                return ResponseDto<bool>.ErrorResponse("Không tìm thấy khách hàng.");
             }
             khachHang.Active = false; // Đánh dấu là không hoạt động
             await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
-            return ResponseDto<bool>.SuccessResponse(true, "Xóa khách hàng thành công!");
+            return ResponseDto<bool>.SuccessResponse(true, "Xóa khách hàng thành công.");
         }
 
         public async Task<ResponseDto<IEnumerable<KhachHangDto>>> GetAllAsync()
@@ -59,7 +71,7 @@ namespace lession.Application.Service.Implementation
             var KhachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
             if(KhachHang == null)
             {
-                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng!");
+                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng.");
             }
             var dto = _mapper.Map<KhachHangDto>(KhachHang);
             return ResponseDto<KhachHangDto>.SuccessResponse(dto);
@@ -76,11 +88,11 @@ namespace lession.Application.Service.Implementation
             var khachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
             if (khachHang == null)
             {
-                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng đã xóa!");
+                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng đã xóa.");
             }
             if (khachHang.Active == true)
             {
-                return ResponseDto<KhachHangDto>.ErrorResponse("Khách hàng này chưa bị xóa!");
+                return ResponseDto<KhachHangDto>.ErrorResponse("Khách hàng này chưa bị xóa.");
             }
             khachHang.Active = true; // Đánh dấu là không hoạt động
             await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
@@ -89,6 +101,7 @@ namespace lession.Application.Service.Implementation
             var dto = _mapper.Map<KhachHangDto>(khachHang);
             return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Khôi phục khách hàng thành công.");
         }
+
 
         public async Task<ResponseDto<IEnumerable<KhachHangDto>>> SearchByNameAsync(string searchTerm)
         {
@@ -102,14 +115,53 @@ namespace lession.Application.Service.Implementation
             var khachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
             if(khachHang == null)
             {
-                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng!");
+                return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng.");
             }
             _mapper.Map(updateDto, khachHang);
             await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
 
             var dto = _mapper.Map<KhachHangDto>(khachHang);
-            return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Cập nhật khách hàng thành công!");
+            return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Cập nhật khách hàng thành công.");
+        }
+
+        // For pagination
+        public async Task<ResponseDto<PagedResult<KhachHangDto>>> GetPagedAsync(ActiveQueryParameters queryParameters)
+        {
+            // Start with base query including active filter
+            var query = _unitOfWork.KhachHangRepository.GetActiveKhachHangsQuery(queryParameters.Active);
+
+            // Apply search if provided
+            if (!string.IsNullOrWhiteSpace(queryParameters.SearchTerm))
+            {
+                query = query.Where(k =>
+                    k.MaKhachHang.Contains(queryParameters.SearchTerm) ||
+                    k.TenKhachHang.Contains(queryParameters.SearchTerm) ||
+                    (k.Email != null && k.Email.Contains(queryParameters.SearchTerm)) ||
+                    (k.SoDienThoai != null && k.SoDienThoai.Contains(queryParameters.SearchTerm))
+                );
+            }
+
+            // Apply ordering
+            query = query.ApplyOrdering(
+                queryParameters.OrderBy,
+                queryParameters.IsDescending,
+                _orderMappings);
+
+            // Apply pagination
+            var pagedResult = await query.ToPagedResultAsync(
+                queryParameters.PageNumber,
+                queryParameters.PageSize);
+
+            // Map to DTOs
+            var dtos = _mapper.Map<List<KhachHangDto>>(pagedResult.Items);
+            var result = new PagedResult<KhachHangDto>(
+                dtos,
+                pagedResult.TotalCount,
+                pagedResult.PageNumber,
+                pagedResult.PageSize);
+
+            return ResponseDto<PagedResult<KhachHangDto>>.SuccessResponse(result, "Lấy danh sách khách hàng thành công.");
         }
     }
 }

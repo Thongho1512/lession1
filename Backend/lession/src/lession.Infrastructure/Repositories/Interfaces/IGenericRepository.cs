@@ -16,5 +16,7 @@ namespace lession.Infrastructure.Repositories.Interfaces
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
         Task<bool> ExistsAsync(Expression<Func<T, bool>> expression);
+        // pagination 
+        IQueryable<T> GetQueryable();
     }
 }

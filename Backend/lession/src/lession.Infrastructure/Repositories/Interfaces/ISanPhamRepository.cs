@@ -11,5 +11,9 @@ namespace lession.Infrastructure.Repositories.Interfaces
     {
         Task<SanPham?> GetByMaSanPhamAsync(string maSanPham);
         Task UpdateStockAsync(int sanPhamId, float v);
+
+        // For pagination
+        IQueryable<SanPham> GetActiveSanPhamsQuery(bool? active = null);
+        IQueryable<SanPham> SearchSanPhamsQuery(string searchTerm);
     }
 }

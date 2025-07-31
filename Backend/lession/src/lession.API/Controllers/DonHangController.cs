@@ -1,4 +1,5 @@
 ﻿using lession.API.DTOs.DonHang;
+using lession.Application.DTOs.Common;
 using lession.Application.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,12 +15,12 @@ namespace lession.API.Controllers
             _donHangService = donHangService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var result = await _donHangService.GetAllAsync();
-            return result.Success ? Ok(result) : BadRequest(result);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetAll()
+        //{
+        //    var result = await _donHangService.GetAllAsync();
+        //    return result.Success ? Ok(result) : BadRequest(result);
+        //}
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
@@ -55,6 +56,17 @@ namespace lession.API.Controllers
         {
             var result = await _donHangService.DeleteAsync(id);
             return result.Success ? Ok(result) : NotFound(result);
+        }
+
+        /// <summary>
+        /// Get orders with pagination, searching, and sorting
+        /// </summary>
+        /// <param name="queryParameters">Query parameters for pagination, searching, and sorting</param>
+        [HttpGet]
+        public async Task<IActionResult> GetPaged([FromQuery] QueryParameters queryParameters)
+        {
+            var result = await _donHangService.GetPagedAsync(queryParameters);
+            return result.Success ? Ok(result) : BadRequest(result);
         }
     }
 }

@@ -2,9 +2,13 @@
 using Azure;
 using lession.API.DTOs.Common;
 using lession.API.DTOs.SanPham;
+using lession.Application.DTOs.Common;
+using lession.Application.Extensions;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
 using lession.Infrastructure.Repositories.Interfaces;
+using System.Linq.Expressions;
+using static lession.Application.DTOs.Common.QueryParameters;
 
 
 namespace lession.Application.Service.Implementation
@@ -13,6 +17,13 @@ namespace lession.Application.Service.Implementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+
+        // Define ordering mappings
+        private readonly Dictionary<string, Expression<Func<SanPham, object>>> _orderMappings = new()
+        {
+            { "masanpham", x => x.MaSanPham },
+            { "tensanpham", x => x.TenSanPham }
+        };
 
         // constructor
         public SanPhamService(IUnitOfWork unitOfWork, IMapper mapper)
@@ -97,5 +108,44 @@ namespace lession.Application.Service.Implementation
             await _unitOfWork.SaveChangesAsync();
             return ResponseDto<SanPhamDto>.SuccessResponse(_mapper.Map<SanPhamDto>(sanPham), "Cập nhật sản phẩm thành công.");
         }
+
+        // For pagination
+        public async Task<ResponseDto<PagedResult<SanPhamDto>>> GetPagedAsync(ActiveQueryParameters queryParameters)
+        {
+            // Start with base query including active filter
+            var query = _unitOfWork.SanPhamRepository.GetActiveSanPhamsQuery(queryParameters.Active);
+
+            // Apply search if provided
+            if (!string.IsNullOrWhiteSpace(queryParameters.SearchTerm))
+            {
+                query = query.Where(s =>
+                    s.MaSanPham.Contains(queryParameters.SearchTerm) ||
+                    s.TenSanPham.Contains(queryParameters.SearchTerm) ||
+                    (s.MoTa != null && s.MoTa.Contains(queryParameters.SearchTerm))
+                );
+            }
+
+            // Apply ordering
+            query = query.ApplyOrdering(
+                queryParameters.OrderBy,
+                queryParameters.IsDescending,
+                _orderMappings);
+
+            // Apply pagination
+            var pagedResult = await query.ToPagedResultAsync(
+                queryParameters.PageNumber,
+                queryParameters.PageSize);
+
+            // Map to DTOs
+            var dtos = _mapper.Map<List<SanPhamDto>>(pagedResult.Items);
+            var result = new PagedResult<SanPhamDto>(
+                dtos,
+                pagedResult.TotalCount,
+                pagedResult.PageNumber,
+                pagedResult.PageSize);
+
+            return ResponseDto<PagedResult<SanPhamDto>>.SuccessResponse(result, "Lấy danh sách sản phẩm thành công.");
+        }
+
     }
 }

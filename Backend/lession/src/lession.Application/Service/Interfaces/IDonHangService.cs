@@ -1,5 +1,6 @@
 ﻿using lession.API.DTOs.Common;
 using lession.API.DTOs.DonHang;
+using lession.Application.DTOs.Common;
 
 namespace lession.Application.Service.Interfaces
 {
@@ -12,5 +13,9 @@ namespace lession.Application.Service.Interfaces
         Task<ResponseDto<bool>> DeleteAsync(int id);
         Task<ResponseDto<IEnumerable<DonHangDto>>> GetByKhachHangIdAsync(int khachHangId);
         Task<ResponseDto<IEnumerable<DonHangDto>>> GetBySanPhamIdAsync(int sanPhamId);
+
+        // For pagination
+        Task<ResponseDto<PagedResult<DonHangDto>>> GetPagedAsync(QueryParameters queryParameters);
+
     }
 }

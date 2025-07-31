@@ -36,5 +36,27 @@ namespace lession.Infrastructure.Repositories.Implementation
             _dbSet.Update(sanPham);
             await _context.SaveChangesAsync();
         }
+
+        // For pagination
+        public IQueryable<SanPham> GetActiveSanPhamsQuery(bool? active = null)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (active.HasValue)
+            {
+                query = query.Where(s => s.Active == active.Value);
+            }
+
+            return query;
+        }
+
+        public IQueryable<SanPham> SearchSanPhamsQuery(string searchTerm)
+        {
+            return _dbSet.Where(s =>
+                s.MaSanPham.Contains(searchTerm) ||
+                s.TenSanPham.Contains(searchTerm) ||
+                (s.MoTa != null && s.MoTa.Contains(searchTerm))
+            );
+        }
     }
 }

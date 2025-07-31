@@ -37,6 +37,21 @@ namespace lession.Infrastructure.Repositories.Implementation
                 .FirstOrDefaultAsync(d => d.Id == id);
         }
 
+        // For pagination
+        public IQueryable<DonHang> GetDonHangsWithKhachHangQuery()
+        {
+            return _dbSet.Include(d => d.KhachHang);
+        }
 
+        public IQueryable<DonHang> SearchDonHangsQuery(string searchTerm)
+        {
+            return _dbSet
+                .Include(d => d.KhachHang)
+                .Where(d =>
+                    d.MaDonHang.Contains(searchTerm) ||
+                    d.KhachHang.TenKhachHang.Contains(searchTerm) ||
+                    (d.GhiChu != null && d.GhiChu.Contains(searchTerm))
+                );
+        }
     }
 }

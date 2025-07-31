@@ -52,5 +52,11 @@ namespace lession.Infrastructure.Repositories.Implementation
             _dbSet.Update(entity);
             await Task.CompletedTask;
         }
+
+        // for pagination
+        public virtual IQueryable<T> GetQueryable()
+        {
+            return _dbSet.AsQueryable();
+        }
     }
 }
