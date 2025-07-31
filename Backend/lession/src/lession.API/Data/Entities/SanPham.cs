@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace lession.Infrastructure.Data.Entities;
+namespace lession.API.Data.Entities;
 
 public partial class SanPham
 {
@@ -13,9 +13,9 @@ public partial class SanPham
 
     public string? MoTa { get; set; }
 
-    public float GiaBan { get; set; }
+    public double? GiaBan { get; set; }
 
-    public float SoLuongTon { get; set; }
+    public double? SoLuongTon { get; set; }
 
     public string? DonViTinh { get; set; }
 

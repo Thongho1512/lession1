@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace lession.Infrastructure.Data.Entities;
+namespace lession.API.Data.Entities;
 
 public partial class DonHang
 {
@@ -13,7 +13,7 @@ public partial class DonHang
 
     public DateOnly? NgayDat { get; set; }
 
-    public float TongTien { get; set; }
+    public double? TongTien { get; set; }
 
     public string? GhiChu { get; set; }
 

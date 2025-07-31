@@ -21,6 +21,19 @@ namespace lession.Application.Service.Implementation
             _mapper = mapper;
         }
 
+        public async Task<ResponseDto<bool>> ActiveSanPhamIsSoftDeleted(int id)
+        {
+            var sanPham = await _unitOfWork.SanPhamRepository.GetByIdAsync(id);
+            if(sanPham == null)
+            {
+                return ResponseDto<bool>.ErrorResponse("Không tìm thấy sản phẩm.");
+            }
+            sanPham.Active = true; // Active the soft-deleted product
+            await _unitOfWork.SanPhamRepository.UpdateAsync(sanPham);
+            await _unitOfWork.SaveChangesAsync();
+            return ResponseDto<bool>.SuccessResponse(true, "Kích hoạt sản phẩm thành công.");
+        }
+
         // methods
         public async Task<ResponseDto<SanPhamDto>> CreateAsync(CreateSanPhamDto createDto)
         {

@@ -11,5 +11,6 @@ namespace lession.Application.Service.Interfaces
         Task<ResponseDto<SanPhamDto>> CreateAsync(CreateSanPhamDto createDto);
         Task<ResponseDto<SanPhamDto>> UpdateAsync(int id, UpdateSanPhamDto updateDto);
         Task<ResponseDto<bool>> DeleteAsync(int id);
+        Task<ResponseDto<bool>> ActiveSanPhamIsSoftDeleted(int id);
     }
 }

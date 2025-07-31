@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace lession.Infrastructure.Data.Entities;
+namespace lession.API.Data.Entities;
 
 public partial class KhachHang
 {
@@ -21,5 +21,5 @@ public partial class KhachHang
 
     public bool? Active { get; set; }
 
-    public virtual ICollection<DonHang> DonHangs { get; set; } = new HashSet<DonHang>();
+    public virtual ICollection<DonHang> DonHangs { get; set; } = new List<DonHang>();
 }

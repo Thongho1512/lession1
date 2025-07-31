@@ -22,4 +22,8 @@
     <ProjectReference Include="..\lession.Domain\lession.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Entities\" />
+  </ItemGroup>
+
 </Project>

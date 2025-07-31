@@ -12,7 +12,7 @@ namespace lession.API.DTOs.DonHang
 
         public DateOnly? NgayDat { get; set; }
 
-        public decimal TongTien { get; set; }
+        public float TongTien { get; set; }
 
         public string? GhiChu { get; set; }
         public List<ChiTietDonHangDto> ChiTietDonHangs { get; set; } = new List<ChiTietDonHangDto>();

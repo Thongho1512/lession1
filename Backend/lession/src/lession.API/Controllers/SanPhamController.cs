@@ -57,5 +57,11 @@ namespace lession.API.Controllers
             return result.Success ? Ok(result) : NotFound(result);
         }
 
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> GetSanPhamIsSoftDeleted(int id)
+        {
+            var result = await _sanPhamService.ActiveSanPhamIsSoftDeleted(id);
+            return result.Success ? Ok(result) : NotFound(result);
+        }
     }
 }

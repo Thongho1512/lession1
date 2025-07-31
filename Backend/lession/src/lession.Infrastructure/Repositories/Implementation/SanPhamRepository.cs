@@ -20,5 +20,21 @@ namespace lession.Infrastructure.Repositories.Implementation
         {
             return await _dbSet.FirstOrDefaultAsync(s => s.MaSanPham == maSanPham);
         }
+
+        public async Task UpdateStockAsync(int sanPhamId, float v)
+        {
+            var sanPham = _dbSet.Find(sanPhamId);
+            if(sanPham == null)
+            {
+                throw new KeyNotFoundException($"Sản phẩm với ID {sanPhamId} không tồn tại.");
+            }
+            sanPham.SoLuongTon = sanPham.SoLuongTon - v;
+            if (sanPham.SoLuongTon < 0)
+            {
+                throw new InvalidOperationException("Số lượng tồn không thể âm.");
+            }
+            _dbSet.Update(sanPham);
+            await _context.SaveChangesAsync();
+        }
     }
 }

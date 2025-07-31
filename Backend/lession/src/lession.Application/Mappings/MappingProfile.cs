@@ -11,6 +11,8 @@ namespace lession.Application.Mappings
     {
         public MappingProfile()
         {
+            //_mapper.Map<TDestination>(source); create a new instance of TDestination
+            // _mapper.Map(source, destination);
             // KhachHang mappings
             CreateMap<KhachHang, KhachHangDto>();
             CreateMap<CreateKhachHangDto, KhachHang>()
@@ -31,13 +33,16 @@ namespace lession.Application.Mappings
             CreateMap<DonHang, DonHangDto>();
             //.ForMember(dest => dest.TenKhachHang, opt => opt.MapFrom(src => src.KhachHang != null ? src.KhachHang.TenKhachHang : null));
             CreateMap<CreateDonHangDto, DonHang>()
-                .ForMember(dest => dest.NgayDat, opt => opt.MapFrom(src => DateTime.Now))
+                //.ForMember(dest => dest.NgayDat, opt => opt.MapFrom(src => DateTime.Now))
+                .ForMember(dest => dest.ChiTietDonHangs, opt => opt.Ignore());
+            CreateMap<UpdateDonHangDto, DonHang>()
                 .ForMember(dest => dest.ChiTietDonHangs, opt => opt.Ignore());
 
             // ChiTietDonHang mappings
             CreateMap<ChiTietDonHang, ChiTietDonHangDto>();
             //.ForMember(dest => dest.TenSanPham, opt => opt.MapFrom(src => src.SanPham != null ? src.SanPham.TenSanPham : null));
             CreateMap<CreateChiTietDonHangDto, ChiTietDonHang>();
+            CreateMap<UpdateChiTietDonHangDto, ChiTietDonHang>();
         }
     }
 }

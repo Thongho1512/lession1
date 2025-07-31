@@ -10,6 +10,6 @@ namespace lession.Infrastructure.Repositories.Interfaces
     public interface ISanPhamRepository : IGenericRepository<SanPham>
     {
         Task<SanPham?> GetByMaSanPhamAsync(string maSanPham);
-        
+        Task UpdateStockAsync(int sanPhamId, float v);
     }
 }
