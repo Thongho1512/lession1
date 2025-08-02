@@ -5,7 +5,7 @@ using lession.Application.DTOs.Common;
 using lession.Application.Extensions;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
-using lession.Infrastructure.Repositories.Interfaces;
+using lession.Infrastructure.UnitOfWork;
 using System;
 using System.Globalization;
 using System.Linq.Expressions;
