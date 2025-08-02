@@ -237,6 +237,17 @@ namespace lession.Application.Service.Implementation
 
             return ResponseDto<PagedResult<DonHangDto>>.SuccessResponse(result, "Lấy danh sách đơn hàng thành công.");
         }
+
+        public async Task<ResponseDto<DonHangDto>> GetWithDetails(int id)
+        {
+            //var donHangDetails = await _unitOfWork.DonHangRepository.GetWithDetailsAsync(id);
+            //if(donHangDetails == null)
+            //{
+            //    return ResponseDto<DonHangDto>.ErrorResponse("Không tìm thấy đơn hàng.");
+            //}
+            return null;
+
+        }
     }
 }
 

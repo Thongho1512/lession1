@@ -14,6 +14,7 @@ namespace lession.Application.Service.Interfaces
         Task<ResponseDto<IEnumerable<DonHangDto>>> GetByKhachHangIdAsync(int khachHangId);
         Task<ResponseDto<IEnumerable<DonHangDto>>> GetBySanPhamIdAsync(int sanPhamId);
 
+        Task<ResponseDto<DonHangDto>> GetWithDetails(int id);
         // For pagination
         Task<ResponseDto<PagedResult<DonHangDto>>> GetPagedAsync(QueryParameters queryParameters);
 

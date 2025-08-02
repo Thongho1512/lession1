@@ -20,6 +20,7 @@ public partial class SanPham
     public string? DonViTinh { get; set; }
 
     public DateTime? NgayTao { get; set; }
+    public DateTime? NgayCapNhat { get; set; }
 
     public bool? Active { get; set; }
 

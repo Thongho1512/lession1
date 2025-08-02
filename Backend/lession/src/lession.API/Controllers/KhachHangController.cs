@@ -1,4 +1,5 @@
 ﻿using lession.API.DTOs.KhachHang;
+using lession.Application.Service.Implementation;
 using lession.Application.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using static lession.Application.DTOs.Common.QueryParameters;
@@ -10,10 +11,12 @@ namespace lession.API.Controllers
     public class KhachHangController : ControllerBase
     {
         private readonly IKhachHangService _khachHangService;
+        private readonly ILogger<KhachHangController> _logger;
 
-        public KhachHangController(IKhachHangService khachHangService)
+        public KhachHangController(IKhachHangService khachHangService, ILogger<KhachHangController> logger)
         {
             _khachHangService = khachHangService;
+            _logger = logger;
         }
 
         //[HttpGet]

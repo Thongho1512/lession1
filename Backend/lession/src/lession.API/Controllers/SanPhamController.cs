@@ -1,4 +1,5 @@
 ﻿using lession.API.DTOs.SanPham;
+using lession.Application.Service.Implementation;
 using lession.Application.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using static lession.Application.DTOs.Common.QueryParameters;
@@ -10,9 +11,11 @@ namespace lession.API.Controllers
     public class SanPhamController : ControllerBase
     {
         private readonly ISanPhamService _sanPhamService;
-        public SanPhamController(ISanPhamService sanPhamService)
+        private readonly ILogger<SanPhamController> _logger;
+        public SanPhamController(ISanPhamService sanPhamService, ILogger<SanPhamController> logger)
         {
             _sanPhamService = sanPhamService;
+            _logger = logger;
         }
 
         //[HttpGet]

@@ -12,6 +12,7 @@ public partial class DonHang
     public int KhachHangId { get; set; }
 
     public DateOnly? NgayDat { get; set; }
+    public DateTime? NgayCapNhat { get; set; }
 
     public float TongTien { get; set; }
 

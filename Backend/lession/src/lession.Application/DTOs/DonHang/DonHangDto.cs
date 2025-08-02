@@ -10,7 +10,8 @@ namespace lession.API.DTOs.DonHang
 
         public int KhachHangId { get; set; }
 
-        public DateOnly? NgayDat { get; set; }
+        public string NgayDat { get; set; } = string.Empty;
+        public string NgayCapNhat { get; set; } = string.Empty;
 
         public float TongTien { get; set; }
 

@@ -14,10 +14,12 @@ public partial class KhachHang
     public string? Email { get; set; }
 
     public string? SoDienThoai { get; set; }
+    public DateOnly? NgaySinh { get; set; }
 
     public string? DiaChi { get; set; }
 
     public DateTime? NgayTao { get; set; }
+    public DateTime? NgayCapNhat { get; set; }
 
     public bool? Active { get; set; }
 

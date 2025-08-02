@@ -17,6 +17,8 @@ namespace lession.Application.Service.Implementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IStaticJsonGeneratorService _jsonGenerator;
+
 
         // Define ordering mappings
         private readonly Dictionary<string, Expression<Func<SanPham, object>>> _orderMappings = new()
@@ -26,10 +28,11 @@ namespace lession.Application.Service.Implementation
         };
 
         // constructor
-        public SanPhamService(IUnitOfWork unitOfWork, IMapper mapper)
+        public SanPhamService(IUnitOfWork unitOfWork, IMapper mapper, IStaticJsonGeneratorService jsonGenerator)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _jsonGenerator = jsonGenerator;
         }
 
         public async Task<ResponseDto<bool>> ActiveSanPhamIsSoftDeleted(int id)
@@ -42,6 +45,10 @@ namespace lession.Application.Service.Implementation
             sanPham.Active = true; // Active the soft-deleted product
             await _unitOfWork.SanPhamRepository.UpdateAsync(sanPham);
             await _unitOfWork.SaveChangesAsync();
+
+            // Generate JSON file
+            _ = Task.Run(async () => await _jsonGenerator.GenerateSanPhamJsonAsync());
+
             return ResponseDto<bool>.SuccessResponse(true, "Kích hoạt sản phẩm thành công.");
         }
 
@@ -57,6 +64,9 @@ namespace lession.Application.Service.Implementation
             await _unitOfWork.SanPhamRepository.AddAsync(sanPham);
             await _unitOfWork.SaveChangesAsync();
 
+            // Generate JSON file
+            _ = Task.Run(async () => await _jsonGenerator.GenerateSanPhamJsonAsync());
+
             var dto = _mapper.Map<SanPhamDto>(sanPham);
             return ResponseDto<SanPhamDto>.SuccessResponse(dto, "Tạo sản phẩm thành công.");
         }
@@ -71,6 +81,10 @@ namespace lession.Application.Service.Implementation
             sanPham.Active = false; // Soft delete
             await _unitOfWork.SanPhamRepository.UpdateAsync(sanPham);
             await _unitOfWork.SaveChangesAsync();
+
+            // Generate JSON file
+            _ = Task.Run(async () => await _jsonGenerator.GenerateSanPhamJsonAsync());
+
             return ResponseDto<bool>.SuccessResponse(true, "Xóa sản phẩm thành công.");
         }
 
@@ -106,6 +120,10 @@ namespace lession.Application.Service.Implementation
             _mapper.Map(updatedto, sanPham);
             await _unitOfWork.SanPhamRepository.UpdateAsync(sanPham);
             await _unitOfWork.SaveChangesAsync();
+
+            // Generate JSON file
+            _ = Task.Run(async () => await _jsonGenerator.GenerateSanPhamJsonAsync());
+
             return ResponseDto<SanPhamDto>.SuccessResponse(_mapper.Map<SanPhamDto>(sanPham), "Cập nhật sản phẩm thành công.");
         }
 
@@ -119,7 +137,7 @@ namespace lession.Application.Service.Implementation
             if (!string.IsNullOrWhiteSpace(queryParameters.SearchTerm))
             {
                 query = query.Where(s =>
-                    s.MaSanPham.Contains(queryParameters.SearchTerm) ||
+                    s.MaSanPham.Contains(queryParameters.SearchTerm) ||  // tương tự LIKE '%keyword%'
                     s.TenSanPham.Contains(queryParameters.SearchTerm) ||
                     (s.MoTa != null && s.MoTa.Contains(queryParameters.SearchTerm))
                 );
@@ -138,6 +156,7 @@ namespace lession.Application.Service.Implementation
 
             // Map to DTOs
             var dtos = _mapper.Map<List<SanPhamDto>>(pagedResult.Items);
+            // Create paged result
             var result = new PagedResult<SanPhamDto>(
                 dtos,
                 pagedResult.TotalCount,

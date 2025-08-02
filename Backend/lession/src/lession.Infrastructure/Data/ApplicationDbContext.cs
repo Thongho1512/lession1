@@ -60,6 +60,7 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.GhiChu).HasMaxLength(500);
             entity.Property(e => e.MaDonHang).HasMaxLength(50);
             entity.Property(e => e.NgayDat).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.NgayCapNhat).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.TongTien).HasColumnType("float");
 
             entity.HasOne(d => d.KhachHang).WithMany(p => p.DonHangs)
@@ -75,12 +76,15 @@ public partial class ApplicationDbContext : DbContext
             entity.ToTable("KhachHang");
 
             entity.HasIndex(e => e.Email, "UQ__KhachHan__A9D105341372D7C1").IsUnique();
-
+            entity.Property(e => e.NgaySinh).HasColumnType("DateOnly");
             entity.Property(e => e.Active).HasDefaultValue(true);
             entity.Property(e => e.DiaChi).HasMaxLength(200);
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.MaKhachHang).HasMaxLength(50);
             entity.Property(e => e.NgayTao)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.NgayCapNhat)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.SoDienThoai).HasMaxLength(20);
@@ -101,6 +105,9 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.MaSanPham).HasMaxLength(50);
             entity.Property(e => e.MoTa).HasMaxLength(500);
             entity.Property(e => e.NgayTao)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.NgayCapNhat)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.SoLuongTon).HasColumnType("float");

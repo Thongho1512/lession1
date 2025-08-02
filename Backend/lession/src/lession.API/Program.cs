@@ -1,4 +1,4 @@
-using lession.API.Middleware;
+﻿using lession.API.Middleware;
 using lession.Application.Mappings;
 using lession.Application.Service.Implementation;
 using lession.Application.Service.Interfaces;
@@ -44,6 +44,10 @@ builder.Services.AddScoped<ISanPhamService, SanPhamService>();
 builder.Services.AddScoped<IKhachHangService, KhachHangService>();
 builder.Services.AddScoped<IDonHangService, DonHangService>();
 
+// Add Static JSON Generator Service
+builder.Services.AddScoped<IStaticJsonGeneratorService, StaticJsonGeneratorService>();
+
+
 // Configure Swagger/OpenAPI
 // This is used to generate API documentation and provide a UI for testing the API endpoints.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -79,6 +83,42 @@ if (app.Environment.IsDevelopment())
         //c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 }
+
+// Initialize JSON files on startup
+using (var scope = app.Services.CreateScope())
+{
+    var jsonGenerator = scope.ServiceProvider.GetRequiredService<IStaticJsonGeneratorService>();
+    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+    try
+    {
+        logger.LogInformation("Generating initial static JSON files...");
+        await jsonGenerator.GenerateAllJsonFilesAsync();
+        logger.LogInformation("Initial static JSON files generated successfully");
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Error generating initial JSON files");
+        // Don't fail startup if JSON generation fails
+    }
+}
+
+
+// Cho phép truy cập file tĩnh
+// wwwroot mặc định
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        // Set CORS headers for JSON files
+        if (ctx.File.Name.EndsWith(".json"))
+        {
+            ctx.Context.Response.Headers?.Add("Access-Control-Allow-Origin", "*");
+        }
+    }
+});
+
+
 
 app.UseMiddleware<GlobalExceptionMiddleware>();
 

@@ -2,11 +2,7 @@
 using lession.Infrastructure.Data.Entities;
 using lession.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace lession.Infrastructure.Repositories.Implementation
 {

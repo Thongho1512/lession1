@@ -6,6 +6,8 @@ using lession.Application.Extensions;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
 using lession.Infrastructure.Repositories.Interfaces;
+using System;
+using System.Globalization;
 using System.Linq.Expressions;
 using static lession.Application.DTOs.Common.QueryParameters;
 
@@ -16,6 +18,7 @@ namespace lession.Application.Service.Implementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IStaticJsonGeneratorService _jsonGenerator;
 
         // Define ordering mappings
         private readonly Dictionary<string, Expression<Func<KhachHang, object>>> _orderMappings = new()
@@ -25,10 +28,11 @@ namespace lession.Application.Service.Implementation
             { "email", x => x.Email ?? "" },
             { "ngaytao", x => x.NgayTao }
         };
-        public KhachHangService(IUnitOfWork unitOfWork, IMapper mapper)
+        public KhachHangService(IUnitOfWork unitOfWork, IMapper mapper, IStaticJsonGeneratorService jsonGenerator)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _jsonGenerator = jsonGenerator;
         }
 
         public async Task<ResponseDto<KhachHangDto>> CreateAsync(CreateKhachHangDto createDto)
@@ -38,9 +42,17 @@ namespace lession.Application.Service.Implementation
             {
                 return ResponseDto<KhachHangDto>.ErrorResponse("Mã khách hàng đã tồn tại.");
             }
+          
             var khachHang = _mapper.Map<KhachHang>(createDto);
+            if(!HandleDateDataType.ParseStringToDateOnly(createDto.NgaySinh, out DateOnly result))
+                return ResponseDto<KhachHangDto>.ErrorResponse("Ngày sinh không hợp lệ. Vui lòng nhập đúng định dạng dd-MM-yyyy.");
+            khachHang.NgaySinh = result;
             await _unitOfWork.KhachHangRepository.AddAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
+
+            // Generate JSON file asynchronously if customer is active
+
+            _ = Task.Run(async () => await _jsonGenerator.GenerateKhachHangJsonAsync());
 
             var dto = _mapper.Map<KhachHangDto>(khachHang);
             return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Tạo khách hàng thành công.");
@@ -56,6 +68,10 @@ namespace lession.Application.Service.Implementation
             khachHang.Active = false; // Đánh dấu là không hoạt động
             await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
+
+            // Generate JSON 
+            _ = Task.Run(async () => await _jsonGenerator.GenerateKhachHangJsonAsync());
+
             return ResponseDto<bool>.SuccessResponse(true, "Xóa khách hàng thành công.");
         }
 
@@ -69,7 +85,7 @@ namespace lession.Application.Service.Implementation
         public async Task<ResponseDto<KhachHangDto>> GetByIdAsync(int id)
         {
             var KhachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
-            if(KhachHang == null)
+            if (KhachHang == null)
             {
                 return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng.");
             }
@@ -98,6 +114,9 @@ namespace lession.Application.Service.Implementation
             await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
 
+            // Generate JSON
+            _ = Task.Run(async () => await _jsonGenerator.GenerateKhachHangJsonAsync());
+
             var dto = _mapper.Map<KhachHangDto>(khachHang);
             return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Khôi phục khách hàng thành công.");
         }
@@ -113,13 +132,21 @@ namespace lession.Application.Service.Implementation
         public async Task<ResponseDto<KhachHangDto>> UpdateAsync(int id, UpdateKhachHangDto updateDto)
         {
             var khachHang = await _unitOfWork.KhachHangRepository.GetByIdAsync(id);
-            if(khachHang == null)
+            if (khachHang == null)
             {
                 return ResponseDto<KhachHangDto>.ErrorResponse("Không tìm thấy khách hàng.");
             }
+            var oldActiveStatus = khachHang.Active;
+
             _mapper.Map(updateDto, khachHang);
+            if(!HandleDateDataType.ParseStringToDateOnly(updateDto.NgaySinh, out DateOnly result))
+                return ResponseDto<KhachHangDto>.ErrorResponse("Ngày sinh không hợp lệ. Vui lòng nhập đúng định dạng dd-MM-yyyy.");
+            khachHang.NgaySinh = result;
             await _unitOfWork.KhachHangRepository.UpdateAsync(khachHang);
             await _unitOfWork.SaveChangesAsync();
+
+            // Generate JSON 
+            _ = Task.Run(async () => await _jsonGenerator.GenerateKhachHangJsonAsync());
 
             var dto = _mapper.Map<KhachHangDto>(khachHang);
             return ResponseDto<KhachHangDto>.SuccessResponse(dto, "Cập nhật khách hàng thành công.");
@@ -163,5 +190,6 @@ namespace lession.Application.Service.Implementation
 
             return ResponseDto<PagedResult<KhachHangDto>>.SuccessResponse(result, "Lấy danh sách khách hàng thành công.");
         }
+
     }
 }

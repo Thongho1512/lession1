@@ -1,5 +1,6 @@
 ﻿using lession.API.DTOs.DonHang;
 using lession.Application.DTOs.Common;
+using lession.Application.Service.Implementation;
 using lession.Application.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,11 @@ namespace lession.API.Controllers
     public class DonHangController : ControllerBase
     {
         private readonly IDonHangService _donHangService;
-        public DonHangController(IDonHangService donHangService)
+        private readonly ILogger<DonHangController> _logger;
+        public DonHangController(IDonHangService donHangService, ILogger<DonHangController> logger)
         {
             _donHangService = donHangService;
+            _logger = logger;
         }
 
         //[HttpGet]

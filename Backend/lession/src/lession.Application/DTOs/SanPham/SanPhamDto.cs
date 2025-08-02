@@ -9,7 +9,7 @@
         public float GiaBan { get; set; }
         public float SoLuongTon { get; set; }
         public bool? Active { get; set; }
-        public DateTime NgayTao { get; set; }
-        public DateTime NgayCapNhat { get; set; }
+        public string NgayTao { get; set; } = string.Empty;
+        public string NgayCapNhat { get; set; } = string.Empty;
     }
 }
