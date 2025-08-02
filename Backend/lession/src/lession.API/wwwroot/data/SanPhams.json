@@ -1,0 +1,39 @@
+{
+  "generated": "2025-08-02T03:23:40.7928558Z",
+  "totalCount": 3,
+  "data": [
+    {
+      "id": 1,
+      "maSanPham": "1",
+      "tenSanPham": "Quần",
+      "moTa": "string",
+      "giaBan": 32,
+      "soLuongTon": 11,
+      "active": true,
+      "ngayTao": "01-08-2025 10:29:22",
+      "ngayCapNhat": "01-08-2025 10:29:22"
+    },
+    {
+      "id": 2,
+      "maSanPham": "2",
+      "tenSanPham": "Áo",
+      "moTa": "string",
+      "giaBan": 32,
+      "soLuongTon": 11,
+      "active": true,
+      "ngayTao": "01-08-2025 10:29:36",
+      "ngayCapNhat": "01-08-2025 10:29:36"
+    },
+    {
+      "id": 3,
+      "maSanPham": "3",
+      "tenSanPham": "Jean",
+      "moTa": "string",
+      "giaBan": 32,
+      "soLuongTon": 22,
+      "active": true,
+      "ngayTao": "01-08-2025 21:11:52",
+      "ngayCapNhat": "01-08-2025 21:11:52"
+    }
+  ]
+}

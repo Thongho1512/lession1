@@ -1,0 +1,14 @@
+﻿namespace lession.API.DTOs.KhachHang
+{
+    public class UpdateKhachHangDto
+    {
+        public string TenKhachHang { get; set; } = string.Empty;
+        public string SoDienThoai { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string NgaySinh { get; set; } = string.Empty;
+        public bool? Active { get; set; }
+        public string DiaChi { get; set; } = string.Empty;
+        // Ngày cập nhật sẽ được tự động gán giá trị trong quá trình xử lý
+        // nên không cần thiết phải có trong DTO khi cập nhật
+    }
+}

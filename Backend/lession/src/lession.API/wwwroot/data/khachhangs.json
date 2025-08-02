@@ -1,0 +1,61 @@
+{
+  "generated": "2025-08-02T03:23:40.7928284Z",
+  "totalCount": 5,
+  "data": [
+    {
+      "id": 1,
+      "tenKhachHang": "thongho",
+      "soDienThoai": "011111111",
+      "email": "thongho1512",
+      "ngaySinh": "15-12-2004",
+      "diaChi": "string",
+      "active": true,
+      "ngayTao": "01-08-2025 09:28:13",
+      "ngayCapNhat": "01-08-2025 09:28:13"
+    },
+    {
+      "id": 2,
+      "tenKhachHang": "truong",
+      "soDienThoai": "011111111",
+      "email": "string",
+      "ngaySinh": "15-12-2004",
+      "diaChi": "string",
+      "active": true,
+      "ngayTao": "01-08-2025 09:30:18",
+      "ngayCapNhat": "01-08-2025 09:30:18"
+    },
+    {
+      "id": 3,
+      "tenKhachHang": "Hieu",
+      "soDienThoai": "011111111",
+      "email": "string",
+      "ngaySinh": "01-10-2004",
+      "diaChi": "string",
+      "active": true,
+      "ngayTao": "01-08-2025 09:37:06",
+      "ngayCapNhat": "01-08-2025 09:37:06"
+    },
+    {
+      "id": 4,
+      "tenKhachHang": "Bae",
+      "soDienThoai": "011111111",
+      "email": "string",
+      "ngaySinh": "01-10-2004",
+      "diaChi": "string",
+      "active": true,
+      "ngayTao": "01-08-2025 10:07:06",
+      "ngayCapNhat": "01-08-2025 10:07:06"
+    },
+    {
+      "id": 5,
+      "tenKhachHang": "update",
+      "soDienThoai": "123",
+      "email": "string",
+      "ngaySinh": "12-12-1999",
+      "diaChi": "string",
+      "active": true,
+      "ngayTao": "01-08-2025 10:08:59",
+      "ngayCapNhat": "01-08-2025 10:20:52"
+    }
+  ]
+}
