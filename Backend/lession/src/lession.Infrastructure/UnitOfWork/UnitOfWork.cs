@@ -1,9 +1,10 @@
 ﻿using lession.Infrastructure.Data;
+using lession.Infrastructure.Repositories.Implementation;
 using lession.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore.Storage;
 
 
-namespace lession.Infrastructure.Repositories.Implementation
+namespace lession.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -2,7 +2,7 @@
 using lession.API.DTOs.KhachHang;
 using lession.API.DTOs.SanPham;
 using lession.Application.Service.Interfaces;
-using lession.Infrastructure.Repositories.Interfaces;
+using lession.Infrastructure.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

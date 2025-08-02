@@ -6,7 +6,7 @@ using lession.Application.Extensions;
 using lession.Application.Service.Interfaces;
 using lession.Infrastructure.Data.Entities;
 using lession.Infrastructure.Repositories.Implementation;
-using lession.Infrastructure.Repositories.Interfaces;
+using lession.Infrastructure.UnitOfWork;
 using System.Linq.Expressions;
 
 
