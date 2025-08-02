@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\lession.Application\lession.Application.csproj" />
-    <ProjectReference Include="..\lession.Domain\lession.Domain.csproj" />
     <ProjectReference Include="..\lession.Infrastructure\lession.Infrastructure.csproj" />
   </ItemGroup>
 
